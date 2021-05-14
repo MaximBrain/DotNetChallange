@@ -40,7 +40,7 @@ namespace ProjectManagementSystem.WebApi.Services
             return projects.Where(project => project.State == State.InProgress).ToList();
         }
 
-        // TODO: Get all necessary data for ProjectModel
+        // TODO: Get all necessary data for ProjectModel with correct Project State based on it's tasks and sub projects with tasks
         private ProjectModel GetProjectWithTasksAndSubTasks(Project projectEntity)
         {
             var projectState = CalculateProjectState(new List<TaskModel>(), new List<ProjectModel>());
@@ -48,7 +48,7 @@ namespace ProjectManagementSystem.WebApi.Services
             return null;
         }
 
-        // TODO: What means IsRoot?
+        // TODO: Implement method to return if the project is root
         private static bool IsRoot(Project project)
         {
             return true;
